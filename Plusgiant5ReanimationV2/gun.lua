@@ -132,7 +132,6 @@ end
 gun.Transparency = reanimating and 1 or 0
 bullet.Transparency = reanimating and 1 or 0
 local gunatt = reanimating and _G:Get("Meshes/CRL4Accessory")
-local bulletatt = reanimating and _G:Get("RockAccessory")
 local hrpatt = reanimating and _G:Get("HumanoidRootPart")
 mainloop = rstepped:Connect(function()
 	if _G.e ~= good or not char or not char.Parent then
@@ -250,16 +249,12 @@ if reanimating then
 	gunatt.Position = Vector3.new(0,0,-.6)
 	gunatt.Orientation = Vector3.new(0,0,-40)
 	gunatt.Parent = gun
-	pcall(function()
-		_G:Block("RockAccessory")
-	end)
 	bulletatt.Position = Vector3.new(-.75,-1.1,0)
 	bulletatt.Orientation = Vector3.new(0,0,0)
 	bulletatt.Parent = bullet
 	hrpatt.Position = Vector3.new()
 	hrpatt.Orientation = Vector3.new()
 	hrpatt.Parent = mousepart
-	_G:GetCharPart("RockAccessory").Handle.CanQuery = false
 	realhrp.CanQuery = false
 	mousepart.CanQuery = false
 	bullet.CanQuery = false
